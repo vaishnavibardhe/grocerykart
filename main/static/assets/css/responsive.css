@@ -1,0 +1,736 @@
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .promo-bar {
+        height: auto;
+        /* 👈 fixed height hatao */
+        padding: 15px 40px 15px 15px;
+        /* 👈 right side close btn ke liye space */
+        background-position: center;
+        /* 👈 better fit mobile me */
+    }
+
+    .shipping-info {
+        font-size: 13px;
+        /* 👈 text chhota */
+        line-height: 18px;
+    }
+
+    .close-promo {
+        top: 10px;
+        right: 10px;
+        font-size: 16px;
+    }
+
+    .secondary-header {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* 1. CONTAINER FIX */
+    .container {
+        width: 100% !important;
+        padding: 0 10px;
+        gap: 20px;
+    }
+
+    /* 2. HEADER FIX */
+    .header-wrap {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* 🔥 important */
+    }
+
+    .left-area {
+        width: 40px;
+    }
+
+    .header-wrap .logo {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .logo img {
+        max-width: 120px;
+        height: auto;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+
+    .header-icons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: white;
+        border-top: 1px solid #ddd;
+        z-index: 9999;
+    }
+
+    .header-icons i {
+        font-size: 22px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .header-icons:hover {
+        color: orange;
+    }
+
+    .menu-toggle {
+        margin-left: auto;
+        display: block;
+        z-index: 2;
+        font-size: 26px;
+        flex-direction: row;
+    }
+
+    /* Sidebar menu */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* 👈 hidden */
+        width: 260px;
+        height: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        /* ✅ LEFT align */
+        justify-content: flex-start !important;
+        /* ✅ TOP align */
+
+        padding: 70px 20px 20px;
+        /* 👈 upar space (close btn ke niche) */
+        gap: 15px;
+        transition: 0.4s ease;
+        z-index: 9999;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-menu a {
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Back button */
+    .back {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 22px;
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Overlay */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* #searchToggle {
+        display: block;
+        
+        font-size: 20px;
+        cursor: pointer;
+    } */
+
+    /* 3. SEARCH FIX */
+    .search-box {
+        width: 100%;
+        display: none !important;
+    }
+
+    /* .search-box.active {
+        display: flex;
+    }
+
+    .search-wrap {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .menu-btn,
+    .offer-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-row {
+        position: relative !important;
+    }
+
+    .search-row {
+        display: block;
+    }
+
+    #searchResults {
+        max-height: 220px;
+    }
+
+    #searchResults div {
+        padding: 11px;
+    } */
+
+    /*===== Slider Banner ======*/
+    .carousel-item {
+        height: auto;
+    }
+
+    .carousel-item img {
+        height: 400px;
+    }
+
+    .custom-caption h2 {
+        font-size: 24px;
+    }
+
+    .grid-container {
+        width: 100%;
+        height: auto;
+        grid-template-columns: 1fr 1fr;
+        /* 2 column */
+        gap: 15px;
+    }
+
+    .offer-container {
+        grid-template-columns: 1fr;
+        /* 👈 2 column */
+        gap: 20px;
+        padding-left: 10px;
+        padding-right: 15px;
+    }
+
+    .offer-card {
+        height: 250px;
+    }
+
+    .offer-text h2 {
+        font-size: 30px;
+    }
+
+    .offer-text.right {
+        left: 50%;
+    }
+
+    .title2 .title-inner2 {
+        font-size: 32px;
+    }
+
+    .trending-tabs {
+        gap: 40px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        width: 95%;
+        /* 2 columns */
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+
+    .product-info h3 {
+        font-size: 17px;
+    }
+
+    .offer-section {
+        padding: 40px 20px;
+    }
+
+    .offer-grid {
+        grid-template-columns: 1fr 1fr;
+        /* 2 column */
+        gap: 10px;
+    }
+
+    .box img {
+        height: auto;
+    }
+
+    .deal-box,
+    .new-product-box {
+        height: auto;
+    }
+
+    .deal-image img {
+        height: 220px;
+    }
+
+    .new-item img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .carousel-control-prev {
+        left: -10px;
+    }
+
+    .carousel-control-next {
+        right: -10px;
+    }
+
+    .promo-section {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* Left image */
+    .promo-left {
+        width: 100%;
+    }
+
+    /* Content position */
+    .promo-content {
+        bottom: 40px;
+        left: 40px;
+    }
+
+    /* Right section */
+    .promo-right {
+        width: 100%;
+        height: auto;
+        padding: 40px 30px;
+    }
+
+    /* 4. PROMO SECTION FIX */
+    .promo-left {
+        margin: 0 !important;
+        /* 🔥 gap remove */
+    }
+
+    /* 5. SLIDER BUTTON FIX (IMPORTANT) */
+    .slider-btn.left {
+        left: 5px;
+    }
+
+    .slider-btn.right {
+        right: 5px;
+    }
+
+
+
+    /* 6. PRODUCT SLIDER FIX */
+    .product-slider {
+        width: 100%;
+        margin: 20px 0;
+        padding-left: 10px;
+    }
+
+    /* 7. FEATURES FIX */
+    /* Features 1 per row */
+    .features {
+        padding: 0;
+    }
+
+    .features .container {
+        flex-wrap: wrap;
+        /* 👈 override */
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .feature-box {
+        width: 100%;
+        max-width: 320px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* 10. BLOG FIX */
+    .blog-card {
+        flex: 0 0 calc(100%);
+    }
+
+    .blog-slider {
+        width: 95%;
+    }
+
+    .arrow1.left {
+        z-index: 10;
+    }
+
+    .left {
+        left: -40px;
+    }
+
+    .right {
+        right: -40px;
+    }
+
+
+    /* 11. CAROUSEL FIX */
+    .carousel-item {
+        padding: 10px;
+        height: auto;
+    }
+
+    .carousel-item img {
+        height: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+
+    .footer-overlay {
+        height: auto;
+        padding: 40px 15px;
+        background-attachment: scroll;
+    }
+
+    .footer-text {
+        margin-left: 0 !important;
+        text-align: center;
+    }
+
+    /* 9. FLOAT BUTTON FIX */
+    .whatsapp-float {
+        right: 15px;
+        bottom: 130px;
+    }
+
+    /* MOBILE */
+
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+    .tap-top {
+        right: 12px;
+        bottom: 60px;
+    }
+}
+
+
+/* ===== LAPTOP ===== */
+@media (992px <=width <=1199px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===== TABLET ===== */
+@media (768px <=width <=991px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .promo-section {
+        flex-direction: column;
+        /* 🔥 fix break */
+    }
+
+    .promo-right {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* ===== TABLET RESPONSIVE (768px - 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1199px) {
+
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .logo img {
+        max-width: 140px;
+    }
+
+    .header-icons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .header-icons i {
+        font-size: 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .offer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .deal-box,
+    .new-product-box {
+        height: auto;
+    }
+
+    .promo-right {
+        width: 100%;
+        height: auto;
+        /* 🔥 FIX */
+        min-height: 650px;
+        /* optional */
+        padding: 30px 20px;
+        box-sizing: border-box;
+        /* 🔥 IMPORTANT */
+    }
+
+    .features .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .feature-box {
+        width: 45%;
+    }
+
+    .footer-text {
+        margin-left: 0 !important;
+        text-align: center;
+    }
+}
+
+/* ===== SMALL MOBILE (<= 375px) ===== */
+@media (max-width: 376px) {
+    .secondary-header {
+        font-size: small;
+    }
+
+    .header-wrap {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        max-width: 100px;
+        /* 👈 chhota karo */
+    }
+
+    .menu-toggle {
+        font-size: 22px;
+    }
+
+    .header-icons {
+        height: 55px;
+    }
+
+    .header-icons i {
+        font-size: 20px;
+    }
+
+    .header-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-wrap .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+
+    .header-wrap {
+        justify-content: space-between;
+    }
+}
+
+/* --------- Responsive ABOUT-US MOBILE ---------- */
+@media (max-width: 576px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .breadcrumb-section .container {
+        display: flex;
+        flex-direction: column;
+        /* 👈 stack */
+        align-items: center;
+        /* 👈 center horizontally */
+        text-align: center;
+        /* 👈 text center */
+        gap: 5px;
+    }
+
+    .page-title h2 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+    }
+
+    /* Header */
+    .page-header {
+        padding: 25px 0;
+        margin-top: 10px;
+    }
+
+    /* Content spacing fix */
+    .card-container {
+        margin: 30px 15px;
+        /* 👈 bada gap remove */
+    }
+
+    .description-text {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    /* Slider fix */
+    .promo-right {
+        margin: 40px auto;
+        padding: 30px;
+        height: 650px;
+        min-height: 400px;
+        width: 90%;
+        max-width: 900px;
+    }
+
+    .team-box {
+        width: 95%;
+    }
+
+    .team-box img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* ===== SMALL MOBILE FIX (375px) ===== */
+@media (max-width: 376px) {
+
+    .promo-right {
+        height: auto !important;
+        /* 🔥 MOST IMPORTANT */
+        min-height: 650px;
+        /* 👈 increase as needed */
+        padding: 20px 15px;
+        width: 100%;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* 👈 content center */
+        font-size: small;
+    }
+}
+
+/* 🔥 FINAL OVERRIDE FIX */
+@media (max-width: 1025px) {
+
+    .promo-right {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 500px;
+        padding: 20px !important;
+        margin: 20px auto !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* 🔥 FIX FOR 412px MOBILE (IMPORTANT) */
+@media (min-width: 400px) and (max-width: 450px) {
+
+    .promo-right {
+        height: auto !important;
+        min-height: 600px;
+        /* 👈 increase height for long text */
+        padding: 25px 20px;
+        margin: 30px auto;
+        width: 95%;
+        box-sizing: border-box;
+    }
+
+    .team-box {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .team-box p {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: justify;
+    }
+}

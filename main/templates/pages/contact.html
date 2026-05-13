@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Saharkar Saoji Masale{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <!------- Contact Section ------------>
+    <div class="breadcrumb-section">
+        <div class="container">
+
+            <div class="page-title">
+                <h2>Contact</h2>
+            </div>
+
+            <div class="breadcrumb">
+                <a href="/">HOME</a>
+                <span>/</span>
+                <span class="active">CONTACT</span>
+            </div>
+        </div>
+    </div>
+
+  <section class="contact-page section-b-space">
+
+    <div class="container">
+
+        <!-- MAP + CONTACT DETAILS -->
+        <div class="row contact-box">
+
+            <!-- MAP -->
+            <div class="col-lg-7">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps?q=saharkar saoji masale-Nagpur,Maharashtra&output=embed"
+                        width="100%" height="420" style="border:0;"></iframe>
+                </div>
+            </div>
+
+            <!-- CONTACT DETAILS -->
+            <div class="col-lg-5">
+
+                <ul class="contact-right">
+
+                    <li>
+                        <h6>CONTACT US</h6>
+                        <p>+91 9689399223</p>
+                        <p>+91 7798127880</p>
+                    </li>
+
+                    <li>
+                        <h6>ADDRESS</h6>
+                        <p>Plot no.7, Near Lazzat Hotel, Parsodi Bhiwapur Road, Umred 441203 </p>
+                        <p>Dist - Nagpur, Maharashtra</p>
+                    </li>
+
+                    <li>
+                        <h6>EMAIL</h6>
+                        <p>saharkarsaoji@gmail.com</p>
+
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<!-- CONTACT FORM SECTION -->
+<section class="contact-form-section section-b-space">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <form class="theme-form" id="contact-form" method="POST" action="/contact/">
+                    {% csrf_token %}
+
+                    <div class="row">
+
+                        <!-- NAME - name attribute add karo -->
+                        <div class="col-md-6">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Enter your name">
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="col-md-6">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Enter your email">
+                        </div>
+
+                        <!-- PHONE -->
+                        <div class="col-md-12">
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone" class="form-control" placeholder="Enter phone number">
+                        </div>
+
+                        <!-- MESSAGE -->
+                        <div class="col-md-12">
+                            <label>Message</label>
+                            <textarea name="message" class="form-control" rows="6"
+                                placeholder="Write your message"></textarea>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="submit" class="send-btn">Send</button>
+                        </div>
+
+                        <!-- SUCCESS MESSAGE -->
+                        {% comment %} {% if request.GET.success %}
+                        <div class="col-md-12" style="margin-top:15px;">
+                            <div class="alert alert-success">
+                                ✅ Message sent successfully! We will contact you soon.
+                            </div>
+                        </div>
+                        {% endif %}  {% endcomment %}
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.querySelector('[name="name"]').value.trim();
+    let email = document.querySelector('[name="email"]').value.trim();
+    let phone = document.querySelector('[name="phone"]').value.trim();
+    let message = document.querySelector('[name="message"]').value.trim();
+
+    // ✅ VALIDATION
+    if (name === "") {
+        alert("❌ Please enter your name");
+        return;
+    }
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("❌ Please enter a valid email");
+        return;
+    }
+
+    let phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phone)) {
+        alert("❌ Please enter valid 10-digit phone number");
+        return;
+    }
+
+    if (message === "") {
+        alert("❌ Please enter your message");
+        return;
+    }
+
+    // ✅ INSTANT ALERT (without waiting)
+    alert("✅ Message Sent Successfully!");
+
+    let form = this;
+    let formData = new FormData(form);
+
+    // Background me request bhejo
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            console.log("Server issue!");
+        }
+    })
+    .catch(error => {
+        console.log("Error:", error);
+    });
+
+    // Form reset immediately
+    form.reset();
+});
+</script>
+
+{% endblock %}
+
+

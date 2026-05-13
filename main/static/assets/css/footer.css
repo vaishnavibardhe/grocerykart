@@ -1,0 +1,261 @@
+/*--------- Footer --------------*/
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    /* left center right ke beech gap */
+    flex-wrap: wrap;
+}
+
+.footer-overlay {
+    background-image: url("https://ps-grocerykart.myshopify.com/cdn/shop/files/footer_1.png?v=1613721256");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    padding-top: 100px;
+    min-height: 300px;
+}
+
+.address {
+    margin: 10px;
+}
+
+.footer-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0);
+    /* 🔥 white transparent */
+}
+
+.footer {
+    position: relative;
+    color: #555;
+}
+
+.footer-overlay>* {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-box {
+    flex: 1;
+    min-width: 280px;
+}
+
+.footer-box h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Newsletter */
+.newsletter-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.newsletter-form button {
+    padding: 10px 15px;
+    border: none;
+    background: #f4a825;
+    color: #fff;
+    cursor: pointer;
+}
+
+.download-app {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.download-app img {
+    width: 140px;
+    height: auto;
+    display: block;
+}
+
+/* Center */
+.center-box {
+    text-align: center;
+}
+
+.logo {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.logo span {
+    color: #f4a825;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 6px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: white;
+    border-radius: 50%;
+    color: #333;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.social-icons .facebook:hover {
+    background: rgb(4, 4, 172);
+    color: white;
+}
+
+/*--.social-icons .google:hover {
+    background: rgb(196, 36, 4);
+    color: white;
+}
+
+.social-icons .twitter:hover {
+    background: rgb(57, 179, 227);
+    color: white;
+}
+
+.social-icons .rss:hover {
+    background: rgb(3, 109, 113);
+    color: white;
+}
+--*/
+.social-icons .insta:hover {
+    background: rgb(205, 43, 140);
+    color: white;
+}
+
+.social-icons .youtube:hover {
+    background: red;
+    color: white;
+}
+
+/* Contact */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.contact-item i {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    background: white;
+    color: orange;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 10px;
+}
+
+.fa-location-dot {
+    font-size: 14px;
+}
+
+.contact-item i:hover {
+    color: black;
+}
+
+
+.footer-text {
+    text-align: center;
+    margin-left: 450px;
+    padding: 10px;
+    color: black;
+}
+
+.footer-text a{
+    color: black;
+    text-decoration: none;
+}
+.footer-text a:hover{
+    color: blue;
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 120px;
+    /* arrow ke upar */
+    right: 40px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+}
+
+/* icon alignment */
+.whatsapp-float i {
+    line-height: 1;
+}
+
+
+/*------- scroll to top -------*/
+html {
+    scroll-behavior: smooth;
+}
+
+.tap-top {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: #ffb12b;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    font-size: 22px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.tap-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.tap-top:hover {
+    background: black;
+}

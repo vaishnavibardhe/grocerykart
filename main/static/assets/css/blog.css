@@ -1,0 +1,168 @@
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* ---------- BREADCRUMB ---------- */
+.breadcrumb-section {
+    background: #f7f7f7;
+    padding: 30px 0;
+    margin: 30px 0;
+}
+
+.breadcrumb-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.page-title h2 {
+    font-size: 20px;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #333;
+}
+
+.breadcrumb span {
+    margin: 0 5px;
+}
+
+.breadcrumb .active {
+    color: #777;
+}
+
+/* ---------- BLOG SECTION ---------- */
+.blog-container {
+    width: 90%;
+    margin: 60px auto;
+}
+
+
+.blog-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+}
+
+/* LEFT */
+.blog-left {
+    width: 40%;
+}
+
+.blog-left img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+/* RIGHT */
+.blog-right {
+    width: 60%;
+}
+
+.blog-right h6 {
+    text-transform: uppercase;
+    color: orange;
+    font-size: 14px;
+}
+
+.blog-right h4 {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.blog-right p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* SOCIAL */
+.post-social {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* ---------- PAGINATION ---------- */
+.pagination {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pagination a {
+    color: #777;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.pagination a:hover {
+    background: orange;
+    color: #fff;
+}
+
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+    .blog-page {
+        justify-content: center;
+    }
+
+    .blog-item {
+        flex-direction: column;
+    }
+
+    .blog-left,
+    .blog-right {
+        width: 100%;
+    }
+
+    .blog-right {
+        margin-top: 10px;
+    }
+
+    .blog-right h4 {
+        font-size: 18px;
+    }
+
+    .blog-right h6 {
+        font-size: 12px;
+    }
+
+    .post-social {
+        flex-wrap: wrap;
+        font-size: 12px;
+    }
+}

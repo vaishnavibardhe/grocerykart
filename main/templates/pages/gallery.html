@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Saharkar Saoji Masale{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/gallery.css' %}">
+{% endblock %}
+
+{% block content %}
+
+  <!----------- Gallery Section ------------>
+  <div class="breadcrumb-section">
+    <div class="container">
+
+      <div class="page-title">
+        <h2>Gallery</h2>
+      </div>
+
+      <div class="breadcrumb">
+        <a href="/">HOME</a>
+        <span>/</span>
+        <span class="active">GALLERY</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-grid">
+
+    <div class="gallery-card">
+      <img src="{% static 'assets/images/Pic1.jpeg' %}">
+      <div class="overlay">Nagpur, Maharashtra</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="{% static 'assets/images/Pic2.jpeg' %}">
+      <div class="overlay">Nagpur, Maharashtra</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="{% static 'assets/images/Pic3.jpeg' %}">
+      <div class="overlay">Nagpur, Maharashtra</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="{% static 'assets/images/Pic4.jpeg' %}">
+      <div class="overlay">Nagpur, Maharashtra</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="{% static 'assets/images/Pic5.jpeg' %}">
+      <div class="overlay">Nagpur, Maharashtra</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="{% static 'assets/images/Pic3.jpeg' %}">
+      <div class="overlay">Nagpur, Maharashtra</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="{% static 'assets/images/Pic1.jpeg' %}">
+      <div class="overlay">Nagpur, Maharashtra</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="{% static 'assets/images/Pic5.jpeg' %}">
+      <div class="overlay">Nagpur, Maharashtra</div>
+    </div>
+
+  </div>
+
+  
+
+{% endblock %}

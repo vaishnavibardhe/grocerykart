@@ -1,0 +1,130 @@
+{% load static %}
+<header>
+        <!-- ================= SECONDARY HEADER ================= -->
+        <div class="secondary-header">
+            <div class="container flex-between">
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/14p2qCkRFFW/"><i class="fab fa-facebook-f"></i></a>
+                    <!-- <a><i class="fab fa-google-plus-g"></i></a>
+                    <a><i class="fab fa-twitter"></i></a>
+                     <a><i class="fa fa-rss" aria-hidden="true"></i></a>-->
+                    <a
+                        href=" https://www.instagram.com/saharkarsaojimasale?igsh=MWltdmZzMXJld281MQ==&utm_source=ig_contact_invite"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@saharkarsaojimasale-pv5nz?si=heGBw8tbBHHkBDbR"> <i
+                            class="fab fa-youtube"></i></a>
+                </div>
+
+                <div class="contact-meta">
+                    <span><i class="fas fa-phone"></i> 9689399223&nbsp;/&nbsp;7798127880 </span>
+                    <span><i class="fas fa-envelope"></i> saharkarsaoji@gmail.com</span>
+                </div>
+
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container header-wrap">
+
+                <!-- LOGO -->
+                <div class="logo">
+                    <img src="{% static 'assets/images/logo_01.png' %}" alt="Logo">
+                </div>
+
+                <!-----Hamburger------>
+                <div class="menu-toggle">☰</div>
+
+                <!-- MENU -->
+                <ul class="nav-menu">
+
+                    <!-- Close Button -->
+                    <div class="back">x</div>
+                    <!-- Home Dropdown -->
+                    <li class="dropdown">
+                        <a href="/">Home </a>
+                    </li>
+
+                    <!-- Shop Dropdown -->
+                    <li class="dropdown">
+                        <a href="/about/">About Us</a>
+
+                    </li>
+
+                    <!-- Product Dropdown -->
+                    <li class="mega-dropdown">
+                        <a href="/product/">Product</a>
+                    </li>
+
+                    <!-- Pages Dropdown -->
+                    <li class="dropdown">
+                        <a href="/gallery/">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <!-- <li><a href="{% url 'blog' %}">Blog</a></li> -->
+
+                    <li>
+                        <a href="/contact/">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- Overlay -->
+                <div class="menu-overlay"></div>
+
+                <!-- ICONS -->
+                <div class="header-icons">
+
+                    <i class="fa fa-search" id="searchToggle"></i>
+                    <i class="fa fa-heart"></i>
+
+                    <i class="far fa-user"></i>
+
+                    <i class="fas fa-sliders-h"></i>
+
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- SEARCH BAR ROW -->
+        <!-- <div class="search-row">
+            <div class="container search-wrap">
+
+                <button class="menu-btn">
+                    <i class="fa fa-th"></i> All Menu Category
+                </button>
+
+                <div class="search-box">
+                    <select>
+                        <option>ALL CATEGORY</option>
+                        <option>DEMO COLLECTION</option>
+                        <option>GROCERY</option>
+                        <option>HALDI</option>
+                        <option>HING</option>
+                        <option>HOME PAGE</option>
+                        <option>MIRCHI</option>
+                        <option>NEW GROCERY</option>
+                        <option>ORGANIC COLLECTION</option>
+                        <option>SPECIAL GROCERY</option>
+                        <option>TRENDING COLLECTION</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search Our Product Catalog"
+                        onkeyup="searchProduct()">
+                    <div id="searchResults"></div>
+                    <button class="search-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+
+                </div>
+
+                <button class="offer-btn">
+                    <i class="fa fa-gift"></i> Festival Gift Offers
+                </button>
+            </div>
+        </div> -->
+    </header>

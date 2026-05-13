@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Saharkar Saoji Masale{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/product.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="breadcrumb-section">
+        <div class="container">
+
+            <div class="page-title">
+                <h2>Product</h2>
+            </div>
+
+            <div class="breadcrumb">
+                <a href="/">HOME</a>
+                <span>/</span>
+                <span class="active">PRODUCT</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <div class="image-slider">
+            <button class="arrow left" onclick="prevProduct()">❮</button>
+            <img id="productImg" src="{% static 'assets/images/gravy masala.jpg' %}">
+            <button class="arrow right" onclick="nextProduct()">❯</button>
+        </div>
+
+        <!-- RIGHT PRODUCT DETAILS -->
+
+        <div class="product-details">
+            
+
+            <h2 id="productName">{{ product.name }}</h2>
+
+            <h3 id="productPrice">{{ product.price }}₹</h3>
+
+            <p id="productDesc">{{ product.desc }}</p>
+
+            <!-- quantity -->
+            <div class="qty-box">
+                <button onclick="decreaseQty()">-</button>
+                <input type="text" id="qty" value="1">
+                <button onclick="increaseQty()">+</button>
+            </div>
+
+
+            <!-- buttons -->
+            <div class="buttons">
+                <button class="cart-btn" onclick="addToCart()">ADD TO CART</button>
+                <button class="buy-btn" onclick="buyNow()">BUY NOW</button>
+                <i class="fa-regular fa-heart wishlist"></i>
+            </div>
+
+
+            <!-- share icons -->
+
+            <div class="share">
+                <h4>Share It</h4>
+                <div class="icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-google"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-pinterest"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- tabs -->
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event,'desc')">Description</button>
+        <button class="tab-btn" onclick="openTab(event,'return')">Return Policy</button>
+        <button class="tab-btn" onclick="openTab(event,'review')">Review</button>
+    </div>
+
+
+    <div class="tab-content active" id="desc">
+        <p>Indian cuisine relies on a variety of aromatic and pungent spices for flavor and health benefits. Key spices
+            include turmeric (earthy, anti-inflammatory), cumin (nutty), coriander (citrusy), mustard seeds, red chili
+            powder, and cardamom. Essential blends include Garam Masala, Chaat Masala, and Hing (Asafoetida).</p>
+    </div>
+
+
+    <div class="tab-content" id="return">
+        <p>
+            Return available within 7 days.
+        </p>
+    </div>
+
+    <div class="tab-content" id="review">
+        <p>No reviews yet.</p>
+    </div>
+
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span onclick="closeCart()">✖</span>
+        </div>
+        <div id="cartItems"></div>
+    </div>
+    <div id="cartOverlay" onclick="closeCart()"></div>
+
+
+  
+
+{% block js %}
+    <script>
+       
+        let products = [];
+
+        let index = 0;
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let path = window.location.pathname.split("/");
+            let id = path[path.length - 2];
+
+            if (isNaN(id)) {
+                index = 0;   // default product
+            } else {
+                index = parseInt(id);
+            }
+
+            fetch("{% static 'assets/js/product.json' %}?v=" + new Date().getTime())
+                .then(res => res.json())
+                .then(data => {
+                    products = data;
+                    showProduct();
+                });
+        });
+
+        function showProduct() {
+
+            document.getElementById("productImg").src = "/static/assets/images/" + products[index].img;
+            document.getElementById("productName").innerText = products[index].name;
+            document.getElementById("productPrice").innerText = products[index].price + "₹";
+            document.getElementById("productDesc").innerText = products[index].desc;
+            // ✅ RESET QTY HERE
+            document.getElementById("qty").value = 1;
+        }
+
+        function nextProduct() {
+            index++;
+            if (index >= products.length) {
+                index = 0;
+            }
+            showProduct();
+        }
+
+        function prevProduct() {
+
+            index--;
+
+            if (index < 0) {
+                index = products.length - 1;
+            }
+
+            showProduct();
+        }
+
+
+        /* QUANTITY */
+        function increaseQty() {
+            let q = document.getElementById("qty");
+            q.value = parseInt(q.value) + 1;
+
+        }
+
+        function decreaseQty() {
+
+            let q = document.getElementById("qty");
+
+            if (q.value > 1) {
+
+                q.value = parseInt(q.value) - 1;
+            }
+        }
+
+
+        /* TABS */
+        function openTab(evt, tabName) {
+            let tabs = document.querySelectorAll(".tab-content");
+            let btns = document.querySelectorAll(".tab-btn");
+
+            tabs.forEach(tab => tab.classList.remove("active"));
+            btns.forEach(btn => btn.classList.remove("active"));
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+
+    
+
+        function buyNow() {
+            window.location.href = "{% url 'login' %}";
+        }
+
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function addToCart() {
+
+            let name = document.getElementById("productName").innerText;
+            let price = parseInt(products[index].price);
+            let img = document.getElementById("productImg").src;
+            let qty = parseInt(document.getElementById("qty").value);
+
+            let existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+
+                existingProduct.qty = qty;
+
+            } else {
+
+                cart.unshift({
+                    name: name,
+                    price: price,
+                    img: img,
+                    qty: qty
+                });
+
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            openCart();
+            displayCart();
+        }
+
+        function openCart() {
+
+            document.getElementById("cartSidebar").classList.add("active");
+            document.getElementById("cartOverlay").classList.add("active");
+
+        }
+
+        function closeCart() {
+
+            document.getElementById("cartSidebar").classList.remove("active");
+            document.getElementById("cartOverlay").classList.remove("active");
+
+        }
+
+        function displayCart() {
+
+    let cartBox = document.getElementById("cartItems");
+    cartBox.innerHTML = "";
+
+    cart.forEach((item, index) => {
+
+        let total = item.price * item.qty;
+
+        cartBox.innerHTML += `
+        <div class="cart-item">
+        
+        <img src="${item.img}" width="150">
+
+        <div class="item2">
+            <h4>${item.name}</h4>
+            <p>Price : ₹${item.price}</p>
+            <p>Qty : ${item.qty}</p>
+            <p>Total : ₹${total}</p>
+        </div>
+
+        <button class="delete-btn" onclick="removeItem(${index})">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+
+        </div>
+        `;
+    });
+}
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+        displayCart();
+    </script>
+
+    {% endblock %}
+
+    
+{% endblock %}

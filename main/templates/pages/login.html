@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/about_us.css' %}">
+{% endblock %}
+
+{% block content %}
+    <style>
+        .account-section {
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .row {
+            margin-bottom: 80px;
+            width: 100%;
+
+        }
+
+        .box {
+            background: white;
+            padding: 40px;
+            border: 1px solid #ddd;
+            height: 90%;
+
+        }
+
+        h3 {
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        input {
+            height: 45px;
+        }
+
+        .login-btn {
+            background: #f4a62a;
+            border: none;
+            padding: 10px 30px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .login-btn:hover {
+            background-color: black;
+        }
+
+        .create-btn {
+            background: #f4a62a;
+            border: none;
+            padding: 10px 25px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .create-btn:hover {
+            background-color: black;
+        }
+
+        .forgot {
+            display: block;
+            margin-top: 10px;
+            color: #f4a62a;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb-section .container {
+                display: flex;
+                flex-direction: column;
+                /* 👈 stack */
+                align-items: center;
+                /* 👈 center horizontally */
+                text-align: center;
+                /* 👈 text center */
+                gap: 5px;
+            }
+
+            .page-title h2 {
+                margin: 0;
+                font-size: 20px;
+            }
+
+            .breadcrumb {
+                font-size: 13px;
+            }
+
+            .account-section {
+                padding: 10px 0;
+            }
+
+            .row {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* 🔥 center */
+                margin-bottom: 30px;
+                gap: 20px;
+            }
+
+            .box {
+                width: 95%;
+                /* 🔥 100% ki jagah 95% */
+                max-width: 400px;
+                padding: 20px;
+                height: auto;
+                margin: auto;
+                box-sizing: border-box;
+                /* 🔥 border cut fix */
+            }
+
+            h3 {
+                font-size: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            input {
+                width: 100%;
+                height: 42px;
+                box-sizing: border-box;
+                /* 🔥 overflow fix */
+            }
+
+            .login-btn,
+            .create-btn {
+                width: 100%;
+                padding: 12px;
+                text-align: center;
+            }
+
+            .forgot {
+                text-align: center;
+            }
+
+            /* 🔥 PAGE TITLE CENTER (ONLY MOBILE) */
+            .page-header .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 5px;
+            }
+        }
+    </style>
+
+
+
+
+    <div class="breadcrumb-section">
+        <div class="container">
+
+            <div class="page-title">
+                <h2>Account</h2>
+            </div>
+
+            <div class="breadcrumb">
+                <a href="/">HOME</a>
+                <span>/</span>
+                <span class="active">ACCOUNT</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container account-section">
+
+        <div class="row">
+
+            <!-- LOGIN -->
+
+            <div class="col-md-6">
+                <h3>LOGIN</h3>
+
+                <div class="box">
+
+
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+
+                    <button class="login-btn">LOGIN</button>
+
+                    <a href="#" class="forgot">Forgot Your Password?</a>
+
+                </div>
+
+            </div>
+
+            <!-- NEW CUSTOMER -->
+
+            <div class="col-md-6">
+
+                <h3>NEW CUSTOMER</h3>
+
+                <div class="box">
+
+
+
+                    <h5>CREATE ACCOUNT</h5>
+
+                    <p>
+                        Sign Up For A Free Account At Our Store. Registration Is Quick And Easy.
+                        It Allows You To Be Able To Order From Our Shop.
+                    </p>
+
+                    <button class="create-btn">CREATE</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+    
+{% endblock %}

@@ -1,0 +1,376 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Saharkar Saoji Masale{% endblock %}</title>
+
+    <link rel="icon" href="{% static 'assets/images/fevicon-logo_01.png' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+    <!-- PAGE SPECIFIC CSS -->
+    {% block css %}{% endblock %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- LOADER BLOCK -->
+    {% block loader %}{% endblock %}
+
+    <!-- PROMO BAR BLOCK -->
+    {% block promo %}{% endblock %}
+
+    <!-- HEADER -->
+    
+    
+<header>
+        <!-- ================= SECONDARY HEADER ================= -->
+        <div class="secondary-header">
+            <div class="container flex-between">
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/14p2qCkRFFW/"><i class="fab fa-facebook-f"></i></a>
+                    <!-- <a><i class="fab fa-google-plus-g"></i></a>
+                    <a><i class="fab fa-twitter"></i></a>
+                     <a><i class="fa fa-rss" aria-hidden="true"></i></a>-->
+                    <a
+                        href=" https://www.instagram.com/saharkarsaojimasale?igsh=MWltdmZzMXJld281MQ==&utm_source=ig_contact_invite"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@saharkarsaojimasale-pv5nz?si=heGBw8tbBHHkBDbR"> <i
+                            class="fab fa-youtube"></i></a>
+                </div>
+
+                <div class="contact-meta">
+                    <span><i class="fas fa-phone"></i> 9689399223&nbsp;/&nbsp;7798127880 </span>
+                    <span><i class="fas fa-envelope"></i> saharkarsaoji@gmail.com</span>
+                </div>
+
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container header-wrap">
+
+                <!-- LOGO -->
+                <div class="logo">
+                    <img src="{% static 'assets/images/logo_01.png' %}" alt="Logo">
+                </div>
+
+                <!-----Hamburger------>
+                <div class="menu-toggle">☰</div>
+
+                <!-- MENU -->
+                <ul class="nav-menu">
+
+                    <!-- Close Button -->
+                    <div class="back">x</div>
+                    <!-- Home Dropdown -->
+                    <li>
+                        <a href="/">Home </a>
+                    </li>
+
+                    <!-- Shop Dropdown -->
+                    <li>
+                        <a href="/about/">About Us</a>
+
+                    </li>
+
+                    <!-- Product Dropdown -->
+                    <li>
+                        <a href="/product/">Product</a>
+                    </li>
+
+                    <!-- Pages Dropdown -->
+                    <li>
+                        <a href="/gallery/">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <!-- <li><a href="{% url 'blog' %}">Blog</a></li> -->
+
+                    <li>
+                        <a href="/contact/">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- Overlay -->
+                <div class="menu-overlay"></div>
+
+                <!-- ICONS -->
+                <div class="header-icons">
+
+                    <i class="fa fa-search" id="searchToggle"></i>
+                    <i class="fa fa-heart"></i>
+
+                    <a href="#" class="user-menu" onclick="openLogin(event)">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <!-- Popup -->
+                    <div id="loginModal" class="login-modal-overlay">
+                        <div class="login-modal-content">
+                            <span class="login-modal-close" onclick="closeLogin()">&times;</span>
+                            <h3>Admin Login</h3>
+                            <form method="POST" action="{% url 'admin_login' %}">
+                                {% csrf_token %}
+                                <input type="text" name="username" placeholder="Username" required>
+                                <input type="password" name="password" placeholder="Password" required>
+                                <button type="submit">Login</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <i class="fas fa-sliders-h"></i>
+
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- SEARCH BAR ROW -->
+        <!-- <div class="search-row">
+            <div class="container search-wrap">
+
+                <button class="menu-btn">
+                    <i class="fa fa-th"></i> All Menu Category
+                </button>
+
+                <div class="search-box">
+                    <select>
+                        <option>ALL CATEGORY</option>
+                        <option>DEMO COLLECTION</option>
+                        <option>GROCERY</option>
+                        <option>HALDI</option>
+                        <option>HING</option>
+                        <option>HOME PAGE</option>
+                        <option>MIRCHI</option>
+                        <option>NEW GROCERY</option>
+                        <option>ORGANIC COLLECTION</option>
+                        <option>SPECIAL GROCERY</option>
+                        <option>TRENDING COLLECTION</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search Our Product Catalog"
+                        onkeyup="searchProduct()">
+                    <div id="searchResults"></div>
+                    <button class="search-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+
+                </div>
+
+                <button class="offer-btn">
+                    <i class="fa fa-gift"></i> Festival Gift Offers
+                </button>
+            </div>
+        </div> -->
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    {% block content %}
+    {% endblock %}
+
+
+    <!-- FOOTER -->
+    
+    
+<!---- Footer Section ---->
+    <footer class="footer">
+        <div class="footer-overlay">
+            <div class="container">
+                <!-- Left Section -->
+                <div class="footer-box newsletter">
+                    <h3>Our Newsletter</h3>
+                    <p>Subscribe us to get best offers designs for our Website.</p>
+
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter Your Email">
+                        <button><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                </div>
+
+                <!-- Center Section -->
+                <div class="footer-box center-box">
+                    <h2 class="logo">
+                        <img src="{% static 'assets/images/logo_01.png' %}" >
+                    </h2>
+
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable
+                        content.
+                    </p>
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/14p2qCkRFFW/" class="facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <!--<a href="" class="google"><i
+                                class="fab fa-google-plus-g"></i></a>
+                        <a href="" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="rss"><i class="fas fa-rss"></i></a>-->
+                        <a href="https://www.instagram.com/saharkarsaojimasale?igsh=MWltdmZzMXJld281MQ==&utm_source=ig_contact_invite"
+                            class="insta"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@saharkarsaojimasale-pv5nz?si=heGBw8tbBHHkBDbR" class="youtube"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="footer-box contact">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Call Us:+91 9689399223 / +91 7798127880</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <a href="https://www.google.com/maps?q=saharkar+saoji+masale+Nagpur+Maharashtra"
+                        target="_blank">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </a>
+                        <span class="address">Address : Plot no.7, Near Lazzat Hotel, Parsodi Bhiwapur Road,
+                            Umred.441203 Dist -
+                            Nagpur,
+                            Maharashtra
+                            Mob 9689399223/7798127880</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saharkarsaoji@gmail.com&su=Order Inquiry&body=Hello, I want to know about your products"
+                        target="_blank">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <span>Email ID: saharkarsaoji@gmail.com </span>
+                    </div>
+                </div>
+                <p class="footer-text">Copyright ©2026 Design and Developed By <a href="https://www.oceansofttech.net/">Ocean Software Technologies</a></p>
+            </div>
+        </div>
+
+
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/9689399223" target="_blank" class="whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!------ scroll to top ---->
+
+        <div class="tap-top">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+    </footer>
+
+
+    <!-- JS -->
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // HAMBURGER MENU
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".nav-menu");
+    const back = document.querySelector(".back");
+    const overlay = document.querySelector(".menu-overlay");
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            menu.classList.add("active");
+            overlay.classList.add("active");
+        });
+    }
+
+    if (back) {
+        back.addEventListener("click", () => {
+            menu.classList.remove("active");
+            overlay.classList.remove("active");
+        });
+    }
+
+    if (overlay) {
+        overlay.addEventListener("click", () => {
+            menu.classList.remove("active");
+            overlay.classList.remove("active");
+        });
+    }
+
+
+    // FOOTER ACCORDION
+    const footerBoxes = document.querySelectorAll(".footer-box");
+
+    footerBoxes.forEach(box => {
+        const header = box.querySelector("h3") || box.querySelector("h2");
+
+        if (header) {
+            header.addEventListener("click", () => {
+
+                footerBoxes.forEach(item => {
+                    if (item !== box) {
+                        item.classList.remove("active");
+                    }
+                });
+
+                box.classList.toggle("active");
+            });
+        }
+    });
+    //===== ADMIN LOGIN MODAL =====
+function openLogin(event) {
+    event.preventDefault();
+    const modal = document.getElementById("loginModal");
+    modal.style.display = "block";
+    document.body.classList.add("popup-open");
+}
+
+function closeLogin() {
+    const modal = document.getElementById("loginModal");
+    modal.style.display = "none";
+    document.body.classList.remove("popup-open");
+}
+
+// Close modal when clicking outside the content
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("loginModal");
+    if (event.target === modal) {
+        closeLogin();
+    }
+});
+
+
+    // SCROLL TOP
+    let tapTop = document.querySelector(".tap-top");
+
+    if (tapTop) {
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 200) {
+                tapTop.classList.add("show");
+            } else {
+                tapTop.classList.remove("show");
+            }
+        });
+
+        tapTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+
+});
+
+</script>
+
+<!-- SCRIPT.JS -->
+<script src="{% static 'assets/js/script.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,740 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Saharkar Saoji Masale</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/images/fevicon-logo_01.png' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<body>
+    <!-- ===== LOADER ===== -->
+    <div id="loader">
+        <img src="https://ps-grocerykart.myshopify.com/cdn/shop/files/Loader-animation_250x.gif?v=1613723134"
+            alt="Loading..." height="110px" width="110px">
+    </div>
+
+
+    <!-- ===== NEWSLETTER POPUP ===== -->
+    <div id="newsletterPopup" class="popup">
+        <div class="popup-content">
+
+            <span class="close-btn">&times;</span>
+
+            <img src="https://ps-grocerykart.myshopify.com/cdn/shop/files/layout_2Newsletter_PopUp_820x490.png?v=1613727815"
+                class="popup-img">
+
+            <h2>Joint Our Newsletter</h2>
+            <p>Subscribe or Join us Our Newsletter For Get Latest Updates in Store</p>
+
+            <input type="email" placeholder="Enter Your Email">
+            <button><a href="https://youtube.com/@saharkarsaojimasale-pv5nz?si=heGBw8tbBHHkBDbR">SUBSCRIBE</a></button>
+
+        </div>
+    </div>
+
+
+    <header>
+        <!-- ================= PROMO BAR ================= -->
+        <div class="promo-bar" id="promobar">
+            <div class="shipping-info">
+                <h1>Saharkar Saoji</h1>
+                <h4>The Taste of Real Saoji Masale</h4>
+            </div>
+            <div class="close-promo" id="closebtn">X</div>
+        </div>
+
+        <!-- ============== SECONDARY HEADER ============= -->
+        <div class="secondary-header">
+            <div class="container flex-between">
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/14p2qCkRFFW/"><i class="fab fa-facebook-f"></i></a>
+                    <!-- <a><i class="fab fa-google-plus-g"></i></a>
+                    <a><i class="fab fa-twitter"></i></a>
+                     <a><i class="fa fa-rss" aria-hidden="true"></i></a>-->
+                    <a
+                        href=" https://www.instagram.com/saharkarsaojimasale?igsh=MWltdmZzMXJld281MQ==&utm_source=ig_contact_invite"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@saharkarsaojimasale-pv5nz?si=heGBw8tbBHHkBDbR"> <i
+                            class="fab fa-youtube"></i></a>
+                    |
+                    <div class="app-download">
+
+                        <i class="fa-solid fa-angle-down"></i>
+
+                    </div>
+                </div>
+
+                <div class="contact-meta">
+                    <span><i class="fas fa-phone"></i> 9689399223&nbsp;/&nbsp;7798127880 </span>
+                    <span><i class="fas fa-envelope"></i> saharkarsaoji@gmail.com</span>
+                </div>
+
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container header-wrap">
+
+                <!-- LOGO -->
+                <div class="logo">
+                    <img src="{% static 'assets/images/logo_01.png' %}">
+                </div>
+
+                <!-----Hamburger------>
+                <div class="menu-toggle">☰</div>
+
+                <!-- MENU -->
+                <ul class="nav-menu">
+
+                    <!-- Close Button -->
+                    <div class="back">x</div>
+                    <!-- Home Dropdown -->
+                    <li>
+                        <a href="/">Home </a>
+                    </li>
+
+                    <!-- Shop Dropdown -->
+                    <li>
+                        <a href="/about/">About Us</a>
+
+                    </li>
+
+                    <!-- Product Dropdown -->
+                    <li>
+                        <a href="/product/">Product</a>
+                    </li>
+
+                    <!-- Pages Dropdown -->
+                    <li >
+                        <a href="/gallery/">Gallery</a>
+                    </li>
+
+                    <!-- <li><a href="pages/blog.html">Blog</a></li> -->
+
+                    <li>
+                        <a href="/contact/">Contact</a>
+                    </li>
+
+                </ul>
+                <!-- Overlay -->
+                <div class="menu-overlay"></div>
+
+                <!-- ICONS -->
+                <div class="header-icons">
+
+                    <i class="fa fa-heart"></i>
+
+                    <a href="#" class="user-menu" onclick="openLogin(event)">
+                        <i class="far fa-user"></i>
+                    </a>
+
+                    <!-- Popup -->
+                    <div id="loginModal" class="login-modal-overlay">
+                        <div class="login-modal-content">
+                            <span class="login-modal-close" onclick="closeLogin()">&times;</span>
+                            <h3>Admin Login</h3>
+                            <form method="POST" action="{% url 'admin_login' %}">
+                                {% csrf_token %}
+                                <input type="text" name="username" placeholder="Username" required>
+                                <input type="password" name="password" placeholder="Password" required>
+                                <button type="submit">Login</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <i class="fas fa-sliders-h"></i>
+
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- SEARCH BAR ROW -->
+        <!-- <div class="search-row">
+            <div class="container search-wrap">
+
+                <button class="menu-btn">
+                    <i class="fa fa-th"></i> All Menu Category
+                </button>
+
+                <div class="search-box">
+                    <select>
+                        <option>ALL CATEGORY</option>
+                        <option>DEMO COLLECTION</option>
+                        <option>GROCERY</option>
+                        <option>HALDI</option>
+                        <option>HING</option>
+                        <option>HOME PAGE</option>
+                        <option>MIRCHI</option>
+                        <option>NEW GROCERY</option>
+                        <option>ORGANIC COLLECTION</option>
+                        <option>SPECIAL GROCERY</option>
+                        <option>TRENDING COLLECTION</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search Our Product Catalog"
+                        onkeyup="searchProduct()">
+                    <div id="searchResults"></div>
+                    <button class="search-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+
+                </div>
+
+                <button class="offer-btn">
+                    <i class="fa fa-gift"></i> Festival Gift Offers
+                </button>
+            </div>
+        </div> -->
+    </header>
+
+    <!--------- Banner Slider -------->
+    <div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <!-- SLIDE 1 (Text Right Side) -->
+            <div class="carousel-item active">
+                <img src="{% static 'assets/images/banner1.jpg' %}" class="d-block w-100">
+            </div>
+
+            <!-- SLIDE 2 (Text Left Side) -->
+            <div class="carousel-item">
+                <img src="{% static 'assets/images/banner2.jpg' %}" class="d-block w-100">
+            </div>
+
+        </div>
+
+        <!-- ARROWS -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainSlider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#mainSlider" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+    <!-- ===== OFFER BANNERS START ===== -->
+    <div class="offer-container">
+
+        <!-- OFFER 1 -->
+        <div class="offer-card green">
+            <img src="{% static 'assets/images/img1.jpeg' %}" alt="">
+            <div class="offer-text right">
+                <span>Save 30% Off</span>
+                <h2 style="font-family: 'Great Vibes', cursive;">Spicy Test</h2>
+                <a href="/product/" class="order-btn">ORDER NOW</a>
+            </div>
+        </div>
+
+        <!-- OFFER 2 -->
+        <div class="offer-card yellow">
+            <img src="{% static 'assets/images/img2.jpeg' %}" alt="">
+            <div class="offer-text center">
+                <span style="text-align: center;">All Grocery Purchase</span>
+                <h2 style="font-family: 'Great Vibes', cursive;">Now 50% Off</h2>
+                <a href="/product/" class="order-btn">SHOP NOW</a>
+            </div>
+        </div>
+
+        <!-- OFFER 3 -->
+        <div class="offer-card peach">
+            <img src="{% static 'assets/images/img3.jpeg' %}" alt="">
+            <div class="offer-text right">
+                <span>Save 25% Off</span>
+                <h2 style="font-family: 'Great Vibes', cursive;">Healthy</h2>
+                <a href="/product/" class="order-btn">ORDER NOW</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- ===== OFFER BANNERS END ===== -->
+    <div class="title2">
+        <h4 style="color: #000000; font-family: 'Great Vibes', cursive; font-size: 30px;">Exclusive Products Saharkar
+            Saoji Masale</h4>
+        <h2 class="title-inner2" style="color: #000000;">Trending Products</h2>
+    </div>
+
+    <!-- ===== ICON TABS ===== -->
+    <div class="trending-tabs">
+
+        <div class="tab active">
+            <div class="icon-circle">
+                <img src="{% static 'assets/images/turmeric.jpg' %}" height="50px" alt="New Product">
+            </div>
+            <p style="font-size: large;"><b>New Product</b></p>
+        </div>
+
+        <div class="tab">
+            <div class="icon-circle">
+                <img src="{% static 'assets/images/mirchi.jpg' %}" height="50px" alt="Special Product">
+            </div>
+            <p style="font-size: large;"><b>Special Product</b></p>
+        </div>
+
+        <div class="tab">
+            <div class="icon-circle">
+                <img src="{% static 'assets/images/black.jpg' %}" height="50px" alt="Best Sellers">
+            </div>
+            <p style="font-size: large;"><b>Best Sellers</b></p>
+        </div>
+
+    </div>
+
+    <section class="product-grid">
+
+    {% for product in products|slice:":10" %}
+    <div class="product-card">
+
+        <a href="{% url 'product' product.id %}">
+            <div class="image-box">
+                <img src="{% static 'assets/images/'|add:product.img %}" class="img1">
+
+                <div class="hover-icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-heart"></i>
+                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-refresh"></i>
+                </div>
+            </div>
+        </a>
+
+        <div class="product-info">
+            <h3>{{ product.name }}</h3>
+
+            <p class="price">
+                {{ product.price }}₹ Kg
+            </p>
+
+            <div class="cart-row">
+                <label>Qty</label>
+                <input type="number" value="1">
+                <button>ADD</button>
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+
+</section>
+
+    <!------------ four images ---------->
+    <section class="offer-section">
+        <div class="offer-grid">
+
+            <div class="box spicy">
+                <img src="{% static 'assets/images/img01.jpg' %}" alt="">
+            </div>
+
+            <div class="box healthy">
+                <img src="{% static 'assets/images/img04.jpg' %}" alt="">
+            </div>
+
+            <div class="box mix">
+                <img src="{% static 'assets/images/img03.jpg' %}" alt="">
+            </div>
+
+            <div class="box natural">
+                <img src="{% static 'assets/images/img02.jpg' %}" alt="">
+            </div>
+        </div>
+    </section>
+
+    
+<!---------- left & right container -------->
+    <div class="container my-5">
+        <div class="row">
+
+            <!-- LEFT SIDE DEAL SECTION -->
+            <div class="col-lg-9">
+                <div class="deal-box">
+
+                    <h3 class="deal-title">Deal Of The Day</h3>
+
+                    <div id="dealSlider" class="carousel slide" data-bs-interval="false">
+
+                        <div class="carousel-inner">
+
+                            {% for product in deal_products %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <div class="row align-items-center">
+
+                                    <div class="col-md-5">
+                                        <div class="deal-image">
+                                            <img src="{% static 'assets/images/' %}{{ product.img }}" alt="{{ product.name }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <h4 class="product-title">{{ product.name }}</h4>
+
+                                        <div class="price-box">
+                                            <span class="new-price">{{ product.price }}₹ Kg</span>
+                                            {% if product.old_price %}<span class="old-price">{{ product.old_price }}₹</span>{% endif %}
+                                        </div>
+
+                                        <p class="desc">
+                                            {{ product.desc }}
+                                        </p>
+
+                                        <!-- <span class="expired">EXPIRED</span> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+
+
+                    </div>
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#dealSlider"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#dealSlider"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+
+
+
+            <!-- RIGHT SIDE NEW PRODUCT -->
+            <div class="col-lg-3">
+                <div class="new-product-box">
+                    <h4 class="new-title">New Product</h4>
+
+                    {% for product in new_products %}
+                    <div class="new-item">
+                        <img src="{% static 'assets/images/' %}{{ product.img }}" alt="{{ product.name }}">
+                        <div>
+                            <div>{{ product.name }}</div>
+                            <div class="np-price">{{ product.price }}₹ kg</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!------------ promo section ---------->
+    <section class="promo-section">
+
+        <!-- LEFT SIDE -->
+        <div class="promo-left">
+            <img src=https://ps-grocerykart.myshopify.com/cdn/shop/files/testi_900x.png?v=1613730768>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="promo-right">
+
+            <div class="team-box active">
+                <img src="{% static 'assets/images/founder.jpeg' %}" alt="Founder">
+                <h5>Founder & Visionary</h5>
+                <h3>Shivanand Saharkar</h3>
+                <p>The foundation of Saharkar Saoji Masale was laid by Mr. Shivanand Saharkar, whose vision was to bring
+                    authentic Saoji spices to people while preserving the rich culinary heritage. Additionally Our
+                    Social Vision is to Pay Back to Society, his dream continues to inspire every step we take.</p>
+            </div>
+
+            <div class="team-box">
+                <img src="{% static 'assets/images/co-founder.jpeg' %}" alt="Co-Founder">
+                <h5>Co-Founder & Taste Expert</h5>
+                <h3>Indu Saharkar</h3>
+                <p>Behind every perfect blend is the expertise of Mrs. Indu Saharkar, whose deep knowledge of
+                    traditional recipes and passion for cooking ensures that every product carries the genuine taste and
+                    aroma of homemade Saoji masala.
+                </p>
+            </div>
+
+            <div class="team-box">
+                <img src="{% static 'assets/images/proprietor.jpeg' %}" alt="Proprietor">
+                <h5>Proprietor</h5>
+                <h3>Vrushabh Saharkar</h3>
+                <p>Leading the brand forward is Mr. Vrushabh Saharkar, who has transformed this family dream into a
+                    growing business. With a strong focus on quality, hygiene, and customer trust, he is committed to
+                    expanding the reach of Saharkar Saoji Masale while staying true to its roots.
+                    We strongly believe in giving back to society. As part of our commitment, Saharkar Saoji Masale aims
+                    to create meaningful impact by generating 100+ direct and indirect employment opportunities,
+                    supporting livelihoods and contributing to the growth of our community.
+                    At Saharkar Saoji Masale, we don’t just make spices — we deliver tradition, trust, and taste in
+                    every packet, while building a better future for society.
+                </p>
+            </div>
+            <!-- DOTS -->
+            <div class="dots">
+                <span onclick="showTeam(0)" class="dot active"></span>
+                <span onclick="showTeam(1)" class="dot"></span>
+                <span onclick="showTeam(2)" class="dot"></span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== Special Product ===== -->
+    <div class="title2">
+        <h4 style="color: gray; font-family: 'Great Vibes', cursive; font-size: 25px;">Top Collections by Saharkar Saoji
+            Masale</h4>
+        <h2 class="title-inner2" style="color: #000000;">Special Products</h2>
+    </div>
+
+    <div class="slider-wrapper">
+
+        <button class="slider-btn left">&#10094;</button>
+
+        <section class="product-slider" id="productSlider">
+
+{% for product in products|slice:"-6:" %}
+    <div class="product-card">
+
+        <a href="{% url 'product' product.id %}">
+            <div class="image-box">
+
+                <img src="{% static 'assets/images/' %}{{ product.img }}" class="img1">
+
+                <div class="hover-icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-heart"></i>
+                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-refresh"></i>
+                </div>
+
+            </div>
+        </a>
+
+        <div class="product-info">
+            <h3>{{ product.name }}</h3>
+
+            <p class="price">
+                {{ product.price }}₹ Kg
+            </p>
+
+            <div class="cart-row">
+                <label>Qty</label>
+                <input type="number" value="1">
+                <button>ADD</button>
+            </div>
+        </div>
+
+    </div>
+{% endfor %}
+
+        </section>
+        <button class="slider-btn right">&#10095;</button>
+    </div>
+
+    <!---------- Four Features-------->
+    <section class="features">
+        <div class="container">
+
+            <div class="feature-box">
+                <img src="https://ps-grocerykart.myshopify.com/cdn/shop/files/image_1_5ca7afdb-8663-4a06-8011-5df3f24f7c2f.png?v=1613720910"
+                    alt="">
+                <div>
+                    <h4>Free Shipping</h4>
+                    <p>Free Shipping World Wide</p>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <img src="https://ps-grocerykart.myshopify.com/cdn/shop/files/image_2_a6465070-2dc8-44e5-b1e2-ac5d07628475.png?v=1613720910"
+                    alt="">
+                <div>
+                    <h4>24 x 7 Service</h4>
+                    <p>Free Shipping World Wide</p>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <img src="https://ps-grocerykart.myshopify.com/cdn/shop/files/image_4.png?v=1613720910" alt="">
+                <div>
+                    <h4>Festival Offer</h4>
+                    <p>Free Shipping World Wide</p>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <img src="https://ps-grocerykart.myshopify.com/cdn/shop/files/image_3_fc0c4166-58d8-4375-b273-7d71884a8878.png?v=1613720920"
+                    alt="">
+                <div>
+                    <h4>Online Payment</h4>
+                    <p>Free Shipping World Wide</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!---------- Blog Section -------->
+    <section class="blog-section">
+
+    <div class="section-title">
+        <p class="sub-title">Saharkar Saoji Masale Recipe Videos</p>
+        <h2>From The Kitchen</h2>
+    </div>
+
+    <div class="blog-slider">
+        <button class="arrow1 left">&#10094;</button>
+
+        <div class="blog-container" id="blogSlider">
+
+            <!-- Card 1 -->
+            <div class="blog-card">
+                <div class="blog-img">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/l-IirPZSyj8?si=RPWFt6CI2Jzlo96v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="blog-card">
+                <div class="blog-img">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/PifjLn00eAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="blog-card">
+                <div class="blog-img">
+                   <iframe width="560" height="315"
+                   src="https://www.youtube.com/embed/bELpRdobStw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="blog-card">
+                <div class="blog-img">
+                    <iframe width="560" height="315"
+                   src="https://www.youtube.com/embed/4TMYzB6MvQ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="arrow1 right">&#10095;</button>
+    </div>
+</section>
+
+
+    <!----------- Footer Section -------->
+    <footer class="footer">
+        <div class="footer-overlay">
+            <div class="container">
+                <!-- Left Section -->
+                <div class="footer-box newsletter">
+                    <h3>Our Newsletter</h3>
+                    <p>Subscribe us to get best offers designs for our Website.</p>
+
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter Your Email">
+                        <button><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                </div>
+
+                <!-- Center Section -->
+                <div class="footer-box center-box">
+
+                    <h2 class="logo">
+                        <img src="{% static 'assets/images/logo_01.png' %}" style="width: 200px;">
+                    </h2>
+
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable
+                        content.
+                    </p>
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/14p2qCkRFFW/" class="facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <!--<a href="" class="google"><i
+                                class="fab fa-google-plus-g"></i></a>
+                        <a href="" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="rss"><i class="fas fa-rss"></i></a>-->
+                        <a href="https://www.instagram.com/saharkarsaojimasale?igsh=MWltdmZzMXJld281MQ==&utm_source=ig_contact_invite"
+                            class="insta"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@saharkarsaojimasale-pv5nz?si=heGBw8tbBHHkBDbR" class="youtube"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="footer-box contact">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Call Us:+91 9689399223 / +91 7798127880</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <a href="https://www.google.com/maps?q=saharkar+saoji+masale+Nagpur+Maharashtra"
+                        target="_blank">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </a>
+                        <span class="address">Address : Plot no.7, Near Lazzat Hotel, Parsodi Bhiwapur Road,
+                            Umred.441203 Dist -
+                            Nagpur,
+                            Maharashtra
+                            </span>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saharkarsaoji@gmail.com&su=Order Inquiry&body=Hello, I want to know about your products"
+                        target="_blank">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                            <span>Email ID: saharkarsaoji@gmail.com</span>   
+                        </div>
+                    </div>
+                </div>
+                <p class="footer-text">Copyright ©2026 Design and Developed By <a
+                        href="https://www.oceansofttech.net/">Ocean Software Technologies</a></p>
+            </div>
+        </div>
+
+
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/9689399223" target="_blank" class="whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!------ scroll to top ---->
+
+        <div class="tap-top">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+    </footer>
+
+
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+
+</html>

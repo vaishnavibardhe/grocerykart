@@ -1,0 +1,97 @@
+[
+  {
+    "id": 0,
+    "img": "gravy_masala.jpg",
+    "name": "Gravy Masala",
+    "price": "400",
+    "desc": "Gravy Masala is a flavorful spice blend used to prepare rich and delicious Indian curries. It enhances the taste, aroma, and color of gravies. Made from a mix of traditional spices, it gives dishes a restaurant-style flavor. Perfect for vegetable and meat curries."
+  },
+  {
+    "id": 1,
+    "img": "kanda_lasun.jpg",
+    "name": "Kanda-Lasun Masala",
+    "price": "420",
+    "desc": "Kanda Lasun Masala is a traditional Maharashtrian spice blend made from onion, garlic, and aromatic spices. It gives a strong, spicy, and authentic flavor to dishes. This masala is commonly used in curries, misal, and stuffed vegetables. It adds depth and richness to everyday cooking."
+  },
+  {
+    "id": 2,
+    "img": "garam_masala.jpg",
+    "name": "Garam Masala",
+    "price": "650",
+    "desc": "Garam Masala is a popular Indian spice mix made from roasted spices like cumin, coriander, cloves, and cinnamon. It adds a warm aroma and rich flavor to many dishes. This masala is commonly used in curries, rice dishes, and soups. It enhances the taste of both vegetarian and non-vegetarian foods.",
+    "section": "deal"
+  },
+  {
+    "id": 3,
+    "img": "chicken_masala.jpg",
+    "name": "Chicken Masala",
+    "price": "550",
+    "desc": "Chicken Masala is a special spice blend designed to make flavorful chicken dishes. It contains a mix of aromatic spices that create a rich and spicy curry. The masala enhances the taste and aroma of chicken recipes. It is perfect for traditional Indian chicken curries.",
+    "section": "new"
+  },
+  {
+    "id": 4,
+    "img": "dhaniya.jpg",
+    "name": "Coriander Powder",
+    "price": "230",
+    "old_price": "300",
+    "desc": "Coriander Powder is made from finely ground dried coriander seeds. It has a mild, slightly sweet, and earthy flavor. This spice is widely used in Indian cooking to enhance the taste of curries and vegetables. It also adds freshness and aroma to many dishes.",
+    "section": "deal"
+  },
+  {
+    "id": 5,
+    "img": "red_chilli.jpg",
+    "name": "Red Chilli Powder",
+    "price": "300",
+    "old_price": "400",
+    "desc": "Red Chilli Powder is a spicy and vibrant spice made from dried red chilies. It adds heat, color, and flavor to many Indian dishes. Different varieties provide mild to strong spiciness. It is commonly used in curries, sauces, and marinades.",
+    "section": "deal"
+  },
+  {
+    "id": 6,
+    "img": "haldi.jpg",
+    "name": "Turmeric Powder",
+    "price": "290",
+    "old_price": "350",
+    "desc": "Turmeric Powder is a bright yellow spice made from dried turmeric roots. It is widely used in Indian cooking for its flavor, color, and health benefits. Turmeric contains curcumin, which has anti-inflammatory and antioxidant properties. It is commonly used in curries, rice, and soups.",
+    "section": "deal"
+  },
+  {
+    "id": 7,
+    "img": "mutton_masala.jpg",
+    "name": "Special Mutton Masala",
+    "price": "550",
+    "desc": "Mutton Masala is a rich spice blend specially made for mutton dishes. It contains aromatic spices that create a flavorful and spicy curry. This masala enhances the taste and aroma of slow-cooked meat recipes. It is perfect for traditional Indian mutton curries.",
+    "section": "new"
+  },
+  {
+    "id": 8,
+    "img": "jeera.jpg",
+    "name": "Jeera Powder(New)",
+    "price": "320",
+    "desc": "Jeera Powder is made from roasted and ground cumin seeds. It has a warm, earthy, and slightly nutty flavor. This spice is widely used in Indian dishes to enhance taste and aroma. It is commonly added to curries, rice, and spice blends.",
+    "section": "deal"
+  },
+  {
+    "id": 9,
+    "img": "kala_masala.jpg",
+    "name": "Kala Masala",
+    "price": "650",
+    "desc": "Kala Masala is a traditional Maharashtrian spice mix known for its deep and smoky flavor. It is made by roasting and grinding a variety of aromatic spices. This masala gives a strong and unique taste to curries and vegetables. It is widely used in authentic Maharashtrian cuisine."
+  },
+  {
+    "id": 10,
+    "img": "biryani.jpg",
+    "name": "Biryani Masala (Special)",
+    "price": "1500",
+    "desc": "Biryani Masala is a fragrant spice blend specially prepared for biryani dishes. It contains spices like cardamom, cloves, cinnamon, and cumin. This masala gives biryani its rich aroma and authentic taste. It is perfect for both vegetarian and non-vegetarian biryani.",
+    "section": "new"
+  },
+  {
+    "id": 11,
+    "img": "sabji_masala.jpg",
+    "name": "Special Sabji Masala",
+    "price": "400",
+    "desc": "Sabji Masala is a versatile spice blend used for cooking vegetable dishes. It enhances the flavor, aroma, and taste of everyday sabjis. Made from a mix of traditional Indian spices, it makes simple vegetables more delicious. It is perfect for quick and flavorful home cooking."
+  }
+]
